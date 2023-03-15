@@ -36,6 +36,14 @@ Basic things that didn't need improvement such as `GUI:BeginGroup()` or `GUI:Set
   Would pass as: <br>
   ![image](https://user-images.githubusercontent.com/86452536/225070082-36ded147-30e9-4c75-b239-971c0b7ce01e.png)
 
+- ## `Eden:EndWindow()`
+  The main call to end a window. this must be used whenever you start a new window using Eden:StartWindow().
+  ### Usage
+  ```lua
+  local MainWindow = Eden:StartWindow("My Window", 120, 120)
+  --Your window widgets in here--
+  Eden:EndWindow()
+  ```
   
   ### Notes
   - Every StartWindow must have an EndWindow to compliment it. 
