@@ -59,6 +59,30 @@ Basic things that didn't need improvement such as `GUI:BeginGroup()` or `GUI:Set
     }
     ```
 
+- ## Eden:BeginChild(Title, SizeX, SizeY, [Padding], [Color])
+  Edens variant of the BeginChild 
+  ### Parameters
+  - `Title` (string): The title of your child window.
+  - `SizeX, SizeY` (int): The size of your child region.
+  - `[Padding]` (int): The padding of the child window.
+  - `[Color]` (string): #color of your child background
+  ### Usage
+  ```lua
+    Eden:StartWindow(400,200, "My Title")
+        GUI:SetCursorPosX(GUI:GetCursorPosX()+10)
+        Eden:BeginChild("hello", 120, 120, 25)
+        GUI:SetCursorPosY(GUI:GetCursorPosY()+15)
+        Eden:Text("This is a child region",0.5,"center")
+        Eden:EndChild()
+    Eden:EndWindow()
+  ```
+  This would render:<br>
+  ![image](https://user-images.githubusercontent.com/86452536/225285237-07405388-e9e7-4c43-8b1d-85d9e86b5c4c.png)
+  ### Notes
+  - Child window opacity not able to be edited currently, will figure out a better way to do this later.
+- ## `Eden:EndChild()`
+  Ends the current child window.
+  
 # Main Widgets
 - ## `Eden:Text(str, font_size, [alignment])`
   This function works differently than minions in that it uses a .png font atlas to render text on the screen. This means you can't use regular text widgets like GUI:CalcTextSize().
